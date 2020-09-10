@@ -161,7 +161,7 @@ namespace SPMproject
             string keyword = textBoxSearch.Text;
 
             SqlConnection conn = new SqlConnection(myconnstrng);
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM tbl_lecturer WHERE LecturerName LIKE '%" + keyword + "%' OR EmployeeID LIKE '%" + keyword + "%' OR Faculty LIKE '%" + keyword + "%'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM table_lecturer WHERE LecturerName LIKE '%" + keyword + "%' OR EmployeeID LIKE '%" + keyword + "%' OR Faculty LIKE '%" + keyword + "%'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridViewLecturer.DataSource = dt;

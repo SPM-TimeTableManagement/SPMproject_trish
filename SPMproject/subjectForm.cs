@@ -25,12 +25,12 @@ namespace SPMproject
         {
             s.SubjectCode = textBoxSubjectCode.Text;
             s.SubjectName = textBoxSubjectName.Text;
-            s.OffYear = textBoxYear.Text;
-            s.Offsemester = comboBoxSemester.Text;
+            s.OfferedYear = textBoxYear.Text;
+            s.OfferedSemester = comboBoxSemester.Text;
             s.LectureHours = numericUpDownLecture.Text;
             s.TuteHours = numericUpDownTute.Text;
             s.LabHours = numericUpDownLab.Text;
-            s.EvoHours = numericUpDownEvolution.Text;
+            s.EvolutionHours = numericUpDownEvolution.Text;
 
             bool success = s.Insert(s);
             if (success == true)
@@ -80,12 +80,12 @@ namespace SPMproject
             s.No = int.Parse(textBoxNosubject.Text);
             s.SubjectCode = textBoxSubjectCode.Text;
             s.SubjectName = textBoxSubjectName.Text;
-            s.OffYear = textBoxYear.Text;
-            s.Offsemester = comboBoxSemester.Text;
+            s.OfferedYear = textBoxYear.Text;
+            s.OfferedSemester = comboBoxSemester.Text;
             s.LectureHours = numericUpDownLecture.Text;
             s.TuteHours = numericUpDownTute.Text;
             s.LabHours = numericUpDownLab.Text;
-            s.EvoHours = numericUpDownEvolution.Text;
+            s.EvolutionHours = numericUpDownEvolution.Text;
 
 
             //update data in database
@@ -152,7 +152,7 @@ namespace SPMproject
             string keyword = textBoxSearchSubject.Text;
 
             SqlConnection conn = new SqlConnection(myconnstrng);
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM tbl_subject WHERE SubjectName LIKE '%" + keyword + "%' OR SubjectCode LIKE '%" + keyword + "%'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM table_subject WHERE SubjectName LIKE '%" + keyword + "%' OR SubjectCode LIKE '%" + keyword + "%'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridViewSubject.DataSource = dt;

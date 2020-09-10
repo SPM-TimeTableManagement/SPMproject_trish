@@ -32,7 +32,7 @@ namespace SPMproject.Classes
             try
             {
                 //writing sql query
-                string sql = "SELECT * FROM tbl_lecturer ";
+                string sql = "SELECT * FROM table_lecturer ";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
@@ -63,7 +63,7 @@ namespace SPMproject.Classes
             {
                 //writing sql query
                 //string sql = "INSERT INTO tbl_lecturer (EmployeeID, LecturerName, Faculty, Department, Center, Building, LevelLecture, RankLecturer) VALUES(@EmployeeID, @LecturerName, @Faculty, @Department, @Center, @Building, @LevelLecture, @RankLecturer)";
-                string sql = "INSERT INTO tbl_lecturer (EmployeeID, LecturerName, Faculty, Department, Center, Building, LevelLecture, RankLecturer) VALUES(@EmployeeID, @LecturerName, @Faculty, @Department, @Center, @Building, @LevelLecture, '"+this.LevelLecture + "."+this.EmployeeID+"')";
+                string sql = "INSERT INTO table_lecturer (EmployeeID, LecturerName, Faculty, Department, Center, Building, LevelLecture, RankLecturer) VALUES(@EmployeeID, @LecturerName, @Faculty, @Department, @Center, @Building, @LevelLecture, '"+this.LevelLecture + "."+this.EmployeeID+"')";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@EmployeeID", l.EmployeeID);
                 cmd.Parameters.AddWithValue("@LecturerName", l.LecturerName);
@@ -113,7 +113,9 @@ namespace SPMproject.Classes
             try
             {
                 //writing sql query
-                string sql = "UPDATE tbl_lecturer SET EmployeeID=@EmployeeID, LecturerName=@LecturerName, Faculty=@Faculty, Department=@Department, Center=@Center, Building=@Building, LevelLecture=@LevelLecture, RankLecturer=@RankLecturer WHERE No=@No";
+                //string sql = "UPDATE table_lecturer SET EmployeeID=@EmployeeID, LecturerName=@LecturerName, Faculty=@Faculty, Department=@Department, Center=@Center, Building=@Building, LevelLecture=@LevelLecture, RankLecturer=@RankLecturer WHERE No=@No";
+                string sql = "UPDATE table_lecturer SET EmployeeID=@EmployeeID, LecturerName=@LecturerName, Faculty=@Faculty, Department=@Department, Center=@Center, Building=@Building, LevelLecture=@LevelLecture, RankLecturer='" + this.LevelLecture + "." + this.EmployeeID + "' WHERE No=@No";
+
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@EmployeeID", l.EmployeeID);
@@ -164,7 +166,7 @@ namespace SPMproject.Classes
             try
             {
                 //writing sql query
-                string sql = "DELETE FROM tbl_lecturer WHERE No=@No";
+                string sql = "DELETE FROM table_lecturer WHERE No=@No";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@No", l.No);

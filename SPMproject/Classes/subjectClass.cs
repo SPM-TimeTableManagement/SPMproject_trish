@@ -14,12 +14,12 @@ namespace SPMproject.Classes
         public int No { get; set; }
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
-        public string OffYear { get; set; }
-        public string Offsemester { get; set; }
+        public string OfferedYear { get; set; }
+        public string OfferedSemester { get; set; }
         public string LectureHours { get; set; }
         public string TuteHours { get; set; }
         public string LabHours { get; set; }
-        public string EvoHours { get; set; }
+        public string EvolutionHours { get; set; }
 
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
@@ -32,7 +32,7 @@ namespace SPMproject.Classes
             try
             {
                 //writing sql query
-                string sql = "SELECT * FROM tbl_subject ";
+                string sql = "SELECT * FROM table_subject ";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
@@ -62,16 +62,16 @@ namespace SPMproject.Classes
             try
             {
                 //writing sql query
-                string sql = "INSERT INTO tbl_subject (SubjectCode, SubjectName, OffYear, OffSemester, LectureHours, TuteHours, LabHours, EvoHours) VALUES(@SubjectCode, @SubjectName, @OffYear, @OffSemester, @LectureHours, @TuteHours, @LabHours, @EvoHours)";
+                string sql = "INSERT INTO table_subject (SubjectCode, SubjectName, OfferedYear, OfferedSemester, LectureHours, TuteHours, LabHours, EvolutionHours) VALUES(@SubjectCode, @SubjectName, @OfferedYear, @OfferedSemester, @LectureHours, @TuteHours, @LabHours, @EvolutionHours)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@SubjectCode", s.SubjectCode );
                 cmd.Parameters.AddWithValue("@SubjectName", s.SubjectName);
-                cmd.Parameters.AddWithValue("@OffYear", s.OffYear);
-                cmd.Parameters.AddWithValue("@OffSemester", s.Offsemester);
+                cmd.Parameters.AddWithValue("@OfferedYear", s.OfferedYear);
+                cmd.Parameters.AddWithValue("@OfferedSemester", s.OfferedSemester);
                 cmd.Parameters.AddWithValue("@LectureHours", s.LectureHours);
                 cmd.Parameters.AddWithValue("@TuteHours", s.TuteHours);
                 cmd.Parameters.AddWithValue("@LabHours", s.LabHours);
-                cmd.Parameters.AddWithValue("@EvoHours", s.EvoHours);
+                cmd.Parameters.AddWithValue("@EvolutionHours", s.EvolutionHours);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -112,17 +112,17 @@ namespace SPMproject.Classes
             try
             {
                 //writing sql query
-                string sql = "UPDATE tbl_subject SET SubjectCode=@SubjectCode, SubjectName=@SubjectName, OffYear=@OffYear, OffSemester=@OffSemester, LectureHours=@LectureHours, TuteHours=@TuteHours, LabHours=@LabHours, EvoHours=@EvoHours WHERE No=@No";
+                string sql = "UPDATE table_subject SET SubjectCode=@SubjectCode, SubjectName=@SubjectName, OfferedYear=@OfferedYear, OfferedSemester=@OfferedSemester, LectureHours=@LectureHours, TuteHours=@TuteHours, LabHours=@LabHours, EvolutionHours=@EvolutionHours WHERE No=@No";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@SubjectCode", s.SubjectCode);
                 cmd.Parameters.AddWithValue("@SubjectName", s.SubjectName);
-                cmd.Parameters.AddWithValue("@OffYear", s.OffYear);
-                cmd.Parameters.AddWithValue("@OffSemester", s.Offsemester);
+                cmd.Parameters.AddWithValue("@OfferedYear", s.OfferedYear);
+                cmd.Parameters.AddWithValue("@OfferedSemester", s.OfferedSemester);
                 cmd.Parameters.AddWithValue("@LectureHours", s.LectureHours);
                 cmd.Parameters.AddWithValue("@TuteHours", s.TuteHours);
                 cmd.Parameters.AddWithValue("@LabHours", s.LabHours);
-                cmd.Parameters.AddWithValue("@EvoHours", s.EvoHours);
+                cmd.Parameters.AddWithValue("@EvolutionHours", s.EvolutionHours);
                 cmd.Parameters.AddWithValue("@No", s.No);
 
                 conn.Open();
@@ -163,7 +163,7 @@ namespace SPMproject.Classes
             try
             {
                 //writing sql query
-                string sql = "DELETE FROM tbl_subject WHERE No=@No";
+                string sql = "DELETE FROM table_subject WHERE No=@No";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@No", s.No);
