@@ -35,6 +35,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.numericUpDownEvolution = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownLab = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTute = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownLecture = new System.Windows.Forms.NumericUpDown();
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.comboBoxSemester = new System.Windows.Forms.ComboBox();
             this.buttonClearsubject = new System.Windows.Forms.Button();
@@ -51,16 +55,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDownLecture = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownTute = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownLab = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownEvolution = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLecture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEvolution)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLecture)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxSearchSubject
@@ -153,13 +153,47 @@
             this.panel2.Size = new System.Drawing.Size(1059, 287);
             this.panel2.TabIndex = 21;
             // 
+            // numericUpDownEvolution
+            // 
+            this.numericUpDownEvolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownEvolution.Location = new System.Drawing.Point(834, 162);
+            this.numericUpDownEvolution.Name = "numericUpDownEvolution";
+            this.numericUpDownEvolution.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDownEvolution.TabIndex = 34;
+            // 
+            // numericUpDownLab
+            // 
+            this.numericUpDownLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownLab.Location = new System.Drawing.Point(834, 120);
+            this.numericUpDownLab.Name = "numericUpDownLab";
+            this.numericUpDownLab.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDownLab.TabIndex = 33;
+            // 
+            // numericUpDownTute
+            // 
+            this.numericUpDownTute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownTute.Location = new System.Drawing.Point(834, 80);
+            this.numericUpDownTute.Name = "numericUpDownTute";
+            this.numericUpDownTute.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDownTute.TabIndex = 32;
+            // 
+            // numericUpDownLecture
+            // 
+            this.numericUpDownLecture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownLecture.Location = new System.Drawing.Point(834, 42);
+            this.numericUpDownLecture.Name = "numericUpDownLecture";
+            this.numericUpDownLecture.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDownLecture.TabIndex = 31;
+            // 
             // textBoxYear
             // 
             this.textBoxYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxYear.Location = new System.Drawing.Point(166, 127);
+            this.textBoxYear.MaxLength = 4;
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(280, 30);
             this.textBoxYear.TabIndex = 30;
+            this.textBoxYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxYear_KeyPress);
             // 
             // comboBoxSemester
             // 
@@ -321,38 +355,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Subject Code :";
             // 
-            // numericUpDownLecture
-            // 
-            this.numericUpDownLecture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownLecture.Location = new System.Drawing.Point(834, 42);
-            this.numericUpDownLecture.Name = "numericUpDownLecture";
-            this.numericUpDownLecture.Size = new System.Drawing.Size(120, 27);
-            this.numericUpDownLecture.TabIndex = 31;
-            // 
-            // numericUpDownTute
-            // 
-            this.numericUpDownTute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownTute.Location = new System.Drawing.Point(834, 80);
-            this.numericUpDownTute.Name = "numericUpDownTute";
-            this.numericUpDownTute.Size = new System.Drawing.Size(120, 27);
-            this.numericUpDownTute.TabIndex = 32;
-            // 
-            // numericUpDownLab
-            // 
-            this.numericUpDownLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownLab.Location = new System.Drawing.Point(834, 120);
-            this.numericUpDownLab.Name = "numericUpDownLab";
-            this.numericUpDownLab.Size = new System.Drawing.Size(120, 27);
-            this.numericUpDownLab.TabIndex = 33;
-            // 
-            // numericUpDownEvolution
-            // 
-            this.numericUpDownEvolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownEvolution.Location = new System.Drawing.Point(834, 162);
-            this.numericUpDownEvolution.Name = "numericUpDownEvolution";
-            this.numericUpDownEvolution.Size = new System.Drawing.Size(120, 27);
-            this.numericUpDownEvolution.TabIndex = 34;
-            // 
             // subjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -369,10 +371,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLecture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEvolution)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLecture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

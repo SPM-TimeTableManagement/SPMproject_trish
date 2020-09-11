@@ -23,30 +23,44 @@ namespace SPMproject
 
         private void buttonAddsubject_Click(object sender, EventArgs e)
         {
-            s.SubjectCode = textBoxSubjectCode.Text;
-            s.SubjectName = textBoxSubjectName.Text;
-            s.OfferedYear = textBoxYear.Text;
-            s.OfferedSemester = comboBoxSemester.Text;
-            s.LectureHours = numericUpDownLecture.Text;
-            s.TuteHours = numericUpDownTute.Text;
-            s.LabHours = numericUpDownLab.Text;
-            s.EvolutionHours = numericUpDownEvolution.Text;
-
-            bool success = s.Insert(s);
-            if (success == true)
-            {
-                MessageBox.Show("New record successfully Inserted");
-                Clear();
-
-            }
+            if (textBoxSubjectCode.Text == "")
+                MessageBox.Show("Subject Code is required !");
+            else if (textBoxSubjectName.Text== "")
+                MessageBox.Show("Subject name is required !");
+            else if (textBoxYear.Text == "")
+                MessageBox.Show("Year is required !");
+            else if (comboBoxSemester.Text == "")
+                MessageBox.Show(" Semester is required !");
+            
             else
             {
-                MessageBox.Show("Failed to add New record.Try again");
-            }
+                s.SubjectCode = textBoxSubjectCode.Text;
+                s.SubjectName = textBoxSubjectName.Text;
+                s.OfferedYear = textBoxYear.Text;
+                s.OfferedSemester = comboBoxSemester.Text;
+                s.LectureHours = numericUpDownLecture.Text;
+                s.TuteHours = numericUpDownTute.Text;
+                s.LabHours = numericUpDownLab.Text;
+                s.EvolutionHours = numericUpDownEvolution.Text;
 
-            //Load data to datagridView
-            DataTable dt = s.Select();
-            dataGridViewSubject.DataSource = dt;
+                bool success = s.Insert(s);
+                if (success == true)
+                {
+                    MessageBox.Show("New record successfully Inserted");
+                    Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add New record.Try again");
+                }
+
+                //Load data to datagridView
+                DataTable dt = s.Select();
+                dataGridViewSubject.DataSource = dt;
+
+            }
+            
         }
 
      
@@ -156,6 +170,14 @@ namespace SPMproject
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridViewSubject.DataSource = dt;
+        }
+
+        private void textBoxYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

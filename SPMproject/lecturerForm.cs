@@ -38,30 +38,50 @@ namespace SPMproject
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            l.EmployeeID = int.Parse(textBoxEmployeeID.Text);
-            l.LecturerName = textBoxLectureName.Text;
-            l.Faculty = comboBoxFaculty.Text;
-            l.Department = comboBoxDepartment.Text;
-            l.Center = comboBoxCenter.Text;
-            l.Building = comboBoxBuilding.Text;
-            l.LevelLecture = comboBoxLevel.Text;
-            l.RankLecture = textBoxRank.Text;
-
-            bool success = l.Insert(l);
-            if (success == true)
-            {
-                MessageBox.Show("New record successfully Inserted");
-                Clear();
-               
-            }
+            if (textBoxEmployeeID.Text == "") 
+                MessageBox.Show("Employee ID is required !");
+            else if (textBoxEmployeeID.Text.Length == 6)
+                MessageBox.Show("Lecturer name is required !");
+            else if(textBoxLectureName.Text=="")
+                MessageBox.Show("Lecturer name is required !");
+            else if (comboBoxFaculty.Text == "")
+                MessageBox.Show(" Faculty is required !");
+            else if (comboBoxDepartment.Text == "")
+                MessageBox.Show("Department is required !");
+            else if (comboBoxCenter.Text == "")
+                MessageBox.Show("Center is required !");
+            else if (comboBoxBuilding.Text == "")
+                MessageBox.Show("Building is required !");
+            else if (comboBoxLevel.Text == "")
+                MessageBox.Show("Level is required !");
             else
             {
-                MessageBox.Show("Failed to add New record.Try again");
-            }
+                l.EmployeeID = int.Parse(textBoxEmployeeID.Text);
+                l.LecturerName = textBoxLectureName.Text;
+                l.Faculty = comboBoxFaculty.Text;
+                l.Department = comboBoxDepartment.Text;
+                l.Center = comboBoxCenter.Text;
+                l.Building = comboBoxBuilding.Text;
+                l.LevelLecture = comboBoxLevel.Text;
+                l.RankLecture = textBoxRank.Text;
 
-            //Load data to datagridView
-            DataTable dt = l.Select();
-            dataGridViewLecturer.DataSource = dt;
+                bool success = l.Insert(l);
+                if (success == true)
+                {
+                    MessageBox.Show("New record successfully Inserted");
+                    Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add New record.Try again");
+                }
+
+                //Load data to datagridView
+                DataTable dt = l.Select();
+                dataGridViewLecturer.DataSource = dt;
+            }
+            
         }
 
         private void lecturerForm_Load(object sender, EventArgs e)
@@ -180,6 +200,14 @@ namespace SPMproject
         private void textBoxRank_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

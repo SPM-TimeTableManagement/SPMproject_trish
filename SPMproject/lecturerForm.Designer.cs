@@ -257,9 +257,11 @@
             // 
             this.textBoxEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmployeeID.Location = new System.Drawing.Point(166, 44);
+            this.textBoxEmployeeID.MaxLength = 6;
             this.textBoxEmployeeID.Name = "textBoxEmployeeID";
             this.textBoxEmployeeID.Size = new System.Drawing.Size(280, 30);
             this.textBoxEmployeeID.TabIndex = 8;
+            this.textBoxEmployeeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEmployeeID_KeyPress);
             // 
             // label8
             // 
