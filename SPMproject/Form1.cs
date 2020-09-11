@@ -59,5 +59,18 @@ namespace SPMproject
 
         }
 
+        private void buttonWorking_Click(object sender, EventArgs e)
+        {
+            //Add_WorkingHours_And_WorkingDays.Form2 frm = new Add_WorkingHours_And_WorkingDays.Form2();
+            //DialogResult selectButton = frm.ShowDialog();
+            panelform1.Controls.Clear();
+            //lecturerForm lectureform = new lecturerForm();
+            Add_WorkingHours_And_WorkingDays.Form2 frm = new Add_WorkingHours_And_WorkingDays.Form2();
+            frm.TopLevel = false;
+            panelform1.Controls.Add(frm);
+            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }

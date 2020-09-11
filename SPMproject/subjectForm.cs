@@ -29,6 +29,8 @@ namespace SPMproject
                 MessageBox.Show("Subject name is required !");
             else if (textBoxYear.Text == "")
                 MessageBox.Show("Year is required !");
+            else if (textBoxYear.Text.Length != 4)
+                MessageBox.Show("Enter valid year !");
             else if (comboBoxSemester.Text == "")
                 MessageBox.Show(" Semester is required !");
             

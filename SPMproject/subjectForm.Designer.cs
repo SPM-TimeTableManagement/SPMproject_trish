@@ -74,6 +74,7 @@
             // 
             // dataGridViewSubject
             // 
+            this.dataGridViewSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSubject.Location = new System.Drawing.Point(2, 383);
             this.dataGridViewSubject.Name = "dataGridViewSubject";

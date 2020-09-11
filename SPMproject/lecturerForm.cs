@@ -40,8 +40,8 @@ namespace SPMproject
         {
             if (textBoxEmployeeID.Text == "") 
                 MessageBox.Show("Employee ID is required !");
-            else if (textBoxEmployeeID.Text.Length == 6)
-                MessageBox.Show("Lecturer name is required !");
+            else if (textBoxEmployeeID.Text.Length != 6)
+                MessageBox.Show("Employee ID must be 6 digit !");
             else if(textBoxLectureName.Text=="")
                 MessageBox.Show("Lecturer name is required !");
             else if (comboBoxFaculty.Text == "")
