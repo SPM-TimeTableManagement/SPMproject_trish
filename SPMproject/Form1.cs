@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Location;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,6 +52,7 @@ namespace SPMproject
 
         private void buttonSession_Click(object sender, EventArgs e)
         {
+           
 
         }
 
@@ -71,6 +73,95 @@ namespace SPMproject
             frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             frm.Show();
+        }
+
+        private void buttonAddBuilding_Click(object sender, EventArgs e)
+        {
+            panelform1.Controls.Clear();
+            //lecturerForm lectureform = new lecturerForm();
+            Add_WorkingHours_And_WorkingDays.Form2 frm = new Add_WorkingHours_And_WorkingDays.Form2();
+            Building build = new Building();
+            build.TopLevel = false;
+            panelform1.Controls.Add(build);
+            build.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            build.Dock = DockStyle.Fill;
+            build.Show();
+
+        }
+
+        private void buttonAddRoom_Click(object sender, EventArgs e)
+        {
+            panelform1.Controls.Clear();
+            //lecturerForm lectureform = new lecturerForm();
+            //Add_WorkingHours_And_WorkingDays.Form2 frm = new Add_WorkingHours_And_WorkingDays.Form2();
+            Room rm = new Room();
+            rm.TopLevel = false;
+            panelform1.Controls.Add(rm);
+            rm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            rm.Dock = DockStyle.Fill;
+            rm.Show();
+        }
+
+        private void buttonStudentBatch_Click(object sender, EventArgs e)
+        {
+            panelform1.Controls.Clear();
+
+            StudentBatch_and_Tags.EditStBatch std = new StudentBatch_and_Tags.EditStBatch();
+            std.TopLevel = false;
+            panelform1.Controls.Add(std);
+            std.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            std.Dock = DockStyle.Fill;
+            std.Show();
+
+        }
+
+        private void buttonProgramme_Click(object sender, EventArgs e)
+        {
+            panelform1.Controls.Clear();
+            
+            StudentBatch_and_Tags.Programme prgrm = new StudentBatch_and_Tags.Programme();
+            prgrm.TopLevel = false;
+            panelform1.Controls.Add(prgrm);
+            prgrm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            prgrm.Dock = DockStyle.Fill;
+            prgrm.Show();
+
+        }
+
+        private void buttonGenarateID_Click(object sender, EventArgs e)
+        {
+            panelform1.Controls.Clear();
+
+            StudentBatch_and_Tags.GenerateGroups gengrp = new StudentBatch_and_Tags.GenerateGroups();
+            gengrp.TopLevel = false;
+            panelform1.Controls.Add(gengrp);
+            gengrp.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            gengrp.Dock = DockStyle.Fill;
+            gengrp.Show();
+        }
+
+        private void buttonStudentList_Click(object sender, EventArgs e)
+        {
+            panelform1.Controls.Clear();
+
+            StudentBatch_and_Tags.StudentList stdList = new StudentBatch_and_Tags.StudentList();
+            stdList.TopLevel = false;
+            panelform1.Controls.Add(stdList);
+            stdList.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            stdList.Dock = DockStyle.Fill;
+            stdList.Show();
+        }
+
+        private void buttonTags_Click(object sender, EventArgs e)
+        {
+            panelform1.Controls.Clear();
+
+            StudentBatch_and_Tags.CreateEditDeleteTag tags = new StudentBatch_and_Tags.CreateEditDeleteTag();
+            tags.TopLevel = false;
+            panelform1.Controls.Add(tags);
+            tags.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            tags.Dock = DockStyle.Fill;
+            tags.Show();
         }
     }
 }

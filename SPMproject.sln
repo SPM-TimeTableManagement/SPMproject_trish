@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMproject", "SPMproject\SP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add WorkingHours And WorkingDays", "..\..\..\Desktop\Final\Add WorkingHours And WorkingDays\Add WorkingHours And WorkingDays\Add WorkingHours And WorkingDays.csproj", "{27537D6C-D199-40DE-87AA-298F42719FE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location", "..\..\..\Desktop\Final\Location\Location\Location.csproj", "{9507F947-CF41-430B-8ECA-757D2A3D7EFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentBatch and Tags", "..\..\..\Desktop\Final\StudentBatch and Tags\StudentBatch and Tags\StudentBatch and Tags.csproj", "{6A91C202-9EAA-42C3-B4C7-DC77AE4660E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{27537D6C-D199-40DE-87AA-298F42719FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27537D6C-D199-40DE-87AA-298F42719FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27537D6C-D199-40DE-87AA-298F42719FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9507F947-CF41-430B-8ECA-757D2A3D7EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9507F947-CF41-430B-8ECA-757D2A3D7EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9507F947-CF41-430B-8ECA-757D2A3D7EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9507F947-CF41-430B-8ECA-757D2A3D7EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A91C202-9EAA-42C3-B4C7-DC77AE4660E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A91C202-9EAA-42C3-B4C7-DC77AE4660E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A91C202-9EAA-42C3-B4C7-DC77AE4660E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A91C202-9EAA-42C3-B4C7-DC77AE4660E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

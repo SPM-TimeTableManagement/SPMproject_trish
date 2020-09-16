@@ -105,6 +105,14 @@
       <Project>{27537d6c-d199-40de-87aa-298f42719fe5}</Project>
       <Name>Add WorkingHours And WorkingDays</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Desktop\Final\Location\Location\Location.csproj">
+      <Project>{9507f947-cf41-430b-8eca-757d2a3d7efc}</Project>
+      <Name>Location</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Desktop\Final\StudentBatch and Tags\StudentBatch and Tags\StudentBatch and Tags.csproj">
+      <Project>{6a91c202-9eaa-42c3-b4c7-dc77ae4660e7}</Project>
+      <Name>StudentBatch and Tags</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
